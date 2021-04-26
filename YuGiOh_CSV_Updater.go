@@ -102,7 +102,7 @@ func main() {
 	fmt.Println("Successfully Opened/Read Card Collection CSV file")
 
 	//Create the new CSV file.
-	outFile, err := os.Create("New Collection.csv")
+	outFile, err := os.Create("New Card Collection.csv")
 	if err != nil {
 
 		log.Fatalln("failed to open file", err)
@@ -138,6 +138,8 @@ func main() {
 		//Get the API response for the card.
 		HttpResponse, err := http.Get(ApiURL + CardInfo.cardid)
 		if err != nil {
+			fmt.Println("Unable to get a response from the API...")
+			time.Sleep(3000 * time.Millisecond)
 			fmt.Print(err.Error())
 			os.Exit(1)
 		}
