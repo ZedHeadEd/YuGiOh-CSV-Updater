@@ -1,0 +1,2 @@
+# YuGiOh CSV Updater
+ 
